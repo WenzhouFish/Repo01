@@ -13,7 +13,6 @@ void hanoi(int n, char a, char b, char c) {
         hanoi(n - 1, b, a, c);
     }
 }
-
 int main() {
     cin >> n >> A >> B >> C;
     hanoi(n, A, B, C);
