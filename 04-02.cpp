@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int Fibonacci(int num) {
+int Fibonacci(int num) {   //定义斐波那契函数
     if (num == 1)
         return 1;
     else if (num == 0)
