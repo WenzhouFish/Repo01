@@ -1,85 +1,96 @@
 #include <iostream>
 #include <cmath>
-using namespace std ;
+using namespace std;
 
-class Shape {
-public :
-    virtual double calculateArea() const = 0 ;
-    virtual double calculatePerimeter() const = 0 ;
-    virtual ~Shape() = default ;
-} ;
+class Shape
+{
+public:
+    virtual double calculateArea() const = 0;
+    virtual double calculatePerimeter() const = 0;
+    virtual ~Shape() = default;
+};
 
-class Circle : public Shape {
-private :
-    double radius ;
+class Circle : public Shape
+{
+private:
+    double radius;
 
-public :
+public:
     Circle(double r) : radius(r) {}
 
-    double calculateArea() const override {
-        return M_PI * radius * radius ;
+    double calculateArea() const override
+    {
+        return M_PI * radius * radius;
     }
 
-    double calculatePerimeter() const override {
-        return 2 * M_PI * radius ;
+    double calculatePerimeter() const override
+    {
+        return 2 * M_PI * radius;
     }
-} ;
+};
 
-class Rectangle : public Shape {
-private :
-    double length ;
-    double width ;
+class Rectangle : public Shape
+{
+private:
+    double length;
+    double width;
 
-public :
+public:
     Rectangle(double l, double w) : length(l), width(w) {}
 
-    double calculateArea() const override {
-        return length * width ;
+    double calculateArea() const override
+    {
+        return length * width;
     }
 
-    double calculatePerimeter() const override {
-        return 2 * (length + width) ;
+    double calculatePerimeter() const override
+    {
+        return 2 * (length + width);
     }
-} ;
+};
 
-class Triangle : public Shape {
-private :
-    double side1 ;
-    double side2 ;
-    double side3 ;
+class Triangle : public Shape
+{
+private:
+    double side1;
+    double side2;
+    double side3;
 
-public :
+public:
     Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
 
-    double calculateArea() const override {
-        double s = (side1 + side2 + side3) / 2 ;
-        return sqrt(s * (s - side1) * (s - side2) * (s - side3)) ;
+    double calculateArea() const override
+    {
+        double s = (side1 + side2 + side3) / 2;
+        return sqrt(s * (s - side1) * (s - side2) * (s - side3));
     }
 
-    double calculatePerimeter() const override {
-        return side1 + side2 + side3 ;
+    double calculatePerimeter() const override
+    {
+        return side1 + side2 + side3;
     }
-} ;
+};
 
-int main() {
-    double radius, length, width, side1, side2, side3 ;
+int main()
+{
+    double radius, length, width, side1, side2, side3;
 
-    cout << "请输入圆的半径: " ;
-    cin >> radius ;
-    Circle circle(radius) ;
+    cout << "请输入圆的半径: ";
+    cin >> radius;
+    Circle circle(radius);
 
-    cout << "请输入矩形的长度和宽度: " ;
-    cin >> length >> width ;
-    Rectangle rectangle(length, width) ;
+    cout << "请输入矩形的长度和宽度: ";
+    cin >> length >> width;
+    Rectangle rectangle(length, width);
 
-    cout << "请输入三角形的三边长: " ;
-    cin >> side1 >> side2 >> side3 ;
-    Triangle triangle(side1, side2, side3) ;
+    cout << "请输入三角形的三边长: ";
+    cin >> side1 >> side2 >> side3;
+    Triangle triangle(side1, side2, side3);
 
-    cout << "圆 - 面积: " << circle.calculateArea() << ", 周长: " << circle.calculatePerimeter() << endl ;
-    cout << "矩形 - 面积: " << rectangle.calculateArea() << ", 周长: " << rectangle.calculatePerimeter() << endl ;
-    cout << "三角形 - 面积: " << triangle.calculateArea() << ", 周长: " << triangle.calculatePerimeter() << endl ;
+    cout << "圆 - 面积: " << circle.calculateArea() << ", 周长: " << circle.calculatePerimeter() << endl;
+    cout << "矩形 - 面积: " << rectangle.calculateArea() << ", 周长: " << rectangle.calculatePerimeter() << endl;
+    cout << "三角形 - 面积: " << triangle.calculateArea() << ", 周长: " << triangle.calculatePerimeter() << endl;
 
-    system("pause") ;
-    return 0 ;
+    system("pause");
+    return 0;
 }

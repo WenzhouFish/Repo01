@@ -22,6 +22,7 @@ private :
 
 
 int Student::count = 0 ;
+
 int main() {
 
     Student student1("A", "ClassA", 01, 85);
